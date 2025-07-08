@@ -89,6 +89,11 @@ def get_zone_data():
 
     return jsonify({ "zones": zone_list })
 
+
+@app.route("/")
+def home():
+    return "Flask ML API is running"
+
 @app.route("/safe-route", methods=["POST"])
 def get_safe_route():
     data = request.json
@@ -103,7 +108,3 @@ def get_safe_route():
 
 if __name__ == '__main__':
     app.run(port=5001, debug=True)
-    
-@app.route("/")
-def home():
-    return "Flask ML API is running"
